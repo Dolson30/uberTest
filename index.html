@@ -17,8 +17,32 @@
         var userLong ='';
         var userLat = '';
 
+    $("#location").on('click',function(){
+
+            console.log("getting location")
+            if (navigator.geolocation) 
+            {
+                navigator.geolocation.getCurrentPosition(showPosition);
+
+            } 
+            else 
+            { 
+                console.log("Geolocation is not supported by this browser.");
+            }
+            });
+
+
+    function showPosition(position) {
+        var pos = position;
+        userLat = pos.coords.latitude;
+        userLong = pos.coords.longitude;
+        console.log(userLat);
+        console.log(userLong);
+            }
+
     $("#button").on('click',function () {
-  
+        console.log("in price function");
+        console.log(userLat + userLong);
     // $.ajax({
     //     type: "GET",
     //     url: "https://api.uber.com/v1.2/estimates/price?start_latitude=37.7752315&start_longitude=-122.418075&end_latitude=37.7752415&end_longitude=-122.518075",
@@ -53,7 +77,8 @@
        console.log(xhttp.responseText);
     }
 };
-xhttp.open('GET', 'https://api.uber.com/v1.2/estimates/price?start_latitude='+userLat+'&start_longitude='+userLong+'&end_latitude=33.8881&end_longitude=84.4706',true);
+
+xhttp.open('GET', 'https://api.uber.com/v1.2/estimates/price?start_latitude='+userLat+'&start_longitude='+userLong+'&end_latitude=37.7752415&end_longitude=-122.518075',true);
 xhttp.setRequestHeader("Authorization", "Token gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL");
 xhttp.send();
     var body = xhttp.response;
@@ -78,28 +103,6 @@ xhttp.send();
 });
 
 
-$("#location").on('click',function(){
-
-    console.log("getting location")
-    if (navigator.geolocation) 
-    {
-        navigator.geolocation.getCurrentPosition(showPosition);
-
-    } 
-    else 
-    { 
-        console.log("Geolocation is not supported by this browser.");
-    }
-});
-
-
-function showPosition(position) {
- var pos = position;
-    userLat = pos.coords.latitude;
-    userLong = pos.coords.longitude;
-    console.log(userLat);
-    console.log(userLong);
-}
 
     
     
