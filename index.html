@@ -13,7 +13,7 @@
     <button id="button">Click Me</button>
     <script>
     $("#button").on('click',function () {
-        console.log("in the function");
+        console.log("in new function");
     // $.ajax({
     //     type: "GET",
     //     url: "https://api.uber.com/v1.2/estimates/price?start_latitude=37.7752315&start_longitude=-122.418075&end_latitude=37.7752415&end_longitude=-122.518075",
@@ -49,6 +49,7 @@
     }
 };
 xhttp.open('GET', 'https://api.uber.com/v1.2/products?latitude=37.7759792&longitude=-122.41823',true);
+xhr.setRequestHeader("Authorization", "Token <gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL>");
 xhttp.send();
     var body = xhttp.response;
     console.log(body);
