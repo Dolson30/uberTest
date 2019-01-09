@@ -53,7 +53,7 @@
        console.log(xhttp.responseText);
     }
 };
-xhttp.open('GET', 'https://api.uber.com/v1.2/estimates/price?start_latitude='+userLat+'&start_longitude='+userLong+'&end_latitude=37.7752415&end_longitude=-122.518075',true);
+xhttp.open('GET', 'https://api.uber.com/v1.2/estimates/price?start_latitude='+userLat+'&start_longitude='+userLong+'&end_latitude=33.8881&end_longitude=84.4706',true);
 xhttp.setRequestHeader("Authorization", "Token gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL");
 xhttp.send();
     var body = xhttp.response;
