@@ -12,12 +12,12 @@
 
     <button id="button">Get Prices</button>
     <button id="time">Get Times</button>
-    <button id="location">CLick to show location</button>
+    <!-- <button id="location">CLick to show location</button> -->
     <script>
         var userLong ='';
         var userLat = '';
 
-    $("#location").on('click',function(){
+    document.on('load',function(){
 
             console.log("getting location")
             if (navigator.geolocation) 
@@ -52,7 +52,7 @@
             }
         };
 
-        xhttp.open('GET', 'https://api.uber.com/v1.2/estimates/price?start_latitude=33.86589&start_longitude=-84.4815&end_latitude=37.7752415&end_longitude=-122.518075',true);
+        xhttp.open('GET', 'https://api.uber.com/v1.2/estimates/price?start_latitude=37.7752315&start_longitude=-122.418075&end_latitude=37.7752415&end_longitude=-122.518075',true);
         xhttp.setRequestHeader("Authorization", "Token gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL");
         xhttp.send();
             var body = xhttp.response;
