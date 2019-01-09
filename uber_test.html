@@ -40,7 +40,10 @@
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://api.uber.com/v1.2/products?latitude=37.7759792&longitude=-122.41823');
 xhr.setRequestHeader("Authorization", "Token gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL");
-xhr.send();
+
+xhr.send(); 
+var body = XMLHttpRequest.response;
+console.log(body);
 });
     
     
