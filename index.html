@@ -14,11 +14,11 @@
     <button id="time">Get Times</button>
     <button id="location">CLick to show location</button>
     <script>
-        let userLong;
-        let userLat;
+        var userLong ='';
+        var userLat = '';
 
     $("#button").on('click',function () {
-        console.log("in price function");
+  
     // $.ajax({
     //     type: "GET",
     //     url: "https://api.uber.com/v1.2/estimates/price?start_latitude=37.7752315&start_longitude=-122.418075&end_latitude=37.7752415&end_longitude=-122.518075",
@@ -95,9 +95,6 @@ $("#location").on('click',function(){
 
 function showPosition(position) {
  var pos = position;
-  console.log( "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude);
-  console.log(pos);
     userLat = pos.coords.latitude;
     userLong = pos.coords.longitude;
     console.log(userLat);
