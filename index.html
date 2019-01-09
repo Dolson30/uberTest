@@ -49,7 +49,7 @@
     }
 };
 xhttp.open('GET', 'https://api.uber.com/v1.2/products?latitude=37.7759792&longitude=-122.41823',true);
-xhr.setRequestHeader("Authorization", "Token <gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL>");
+xhttp.setRequestHeader("Authorization", "Token <gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL>");
 xhttp.send();
     var body = xhttp.response;
     console.log(body);
