@@ -10,10 +10,11 @@
 </head>
 <body>
 
-    <button id="button">Click Me</button>
+    <button id="button">Get Prices</button>
+    <button id="time">Get Times</button>
     <script>
     $("#button").on('click',function () {
-        console.log("in new function");
+        console.log("in price function");
     // $.ajax({
     //     type: "GET",
     //     url: "https://api.uber.com/v1.2/estimates/price?start_latitude=37.7752315&start_longitude=-122.418075&end_latitude=37.7752415&end_longitude=-122.518075",
@@ -48,12 +49,32 @@
        console.log(xhttp.responseText);
     }
 };
-xhttp.open('GET', 'https://api.uber.com/v1.2/products?latitude=37.7759792&longitude=-122.41823',true);
+xhttp.open('GET', 'https://api.uber.com/v1.2/estimates/price?start_latitude=37.7752315&start_longitude=-122.418075&end_latitude=37.7752415&end_longitude=-122.518075',true);
 xhttp.setRequestHeader("Authorization", "Token gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL");
 xhttp.send();
     var body = xhttp.response;
     console.log(body);
 });
+
+
+$("#time").on('click',function () {
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+       console.log(xhttp.responseText);
+    }
+};
+xhttp.open('GET', 'https://api.uber.com/v1.2/estimates/time?start_latitude=37.7752315&start_longitude=-122.418075',true);
+xhttp.setRequestHeader("Authorization", "Token gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL");
+xhttp.send();
+    var body = xhttp.response;
+    console.log(body);
+});
+
+
+
     
     
     </script>
