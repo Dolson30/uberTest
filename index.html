@@ -13,7 +13,7 @@
     <button id="button">Get Prices</button>
     <button id="time">Get Times</button>
     <button id="location">Click to show location</button>
-    <button id="est">Click me to see uberPrice</button>
+    <button id="est">Click me to see e</button>
     <script>
         var uberPrice;
         var userLong ='';
@@ -51,6 +51,7 @@
             if (this.readyState == 4 && this.status == 200) {
             // Typical action to be performed when the document is ready:
             console.log(xhttp.responseText);
+            uberPrice = xhttp.responseText;
             }
         };
 
