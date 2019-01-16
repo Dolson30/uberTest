@@ -13,7 +13,7 @@
     <button id="button">Get Prices</button>
     <button id="time">Get Times</button>
     <button id="location">Click to show location</button>
-    <button id="est">Click to Return ghjk</button>
+    <button id="est">Click to sd ghjk</button>
     <script>
         var uberPrice;
         var userLong ='';
@@ -58,11 +58,7 @@
         xhttp.setRequestHeader("Authorization", "Token gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL");
         xhttp.send();
            uberPrice = xhttp.response;
-           console.log(uberPrice);
-            console.log(uberPrice[1]);
-            console.log(uberPrice[1].estimate);
-            console.log(uberPrice[1].localized_display_name);
-            
+            console.log(xhttp.response[1].estimate);
         });
 
 
