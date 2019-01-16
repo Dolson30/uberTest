@@ -13,7 +13,7 @@
     <button id="button">Get Prices</button>
     <button id="time">Get Times</button>
     <button id="location">Click to show location</button>
-    <button id="est">Click Wahoo:)</button>
+    <button id="est">Click Done</button>
     <script>
         var uberPrice;
         var userLong ='';
@@ -86,10 +86,9 @@ $("#location").on('click',function(){
 
 $("#est").on('click',function(){
     console.log(uberPrice);
-    var newData=uberPrice.prices;
     var newData2=JSON.parse(uberPrice).prices;
-    console.log(newData);
-    console.log(newData2);
+    console.log(newData2[1].localized_display_name);
+    console.log(newData2[1].estimate);
 });
 
     
