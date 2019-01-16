@@ -13,7 +13,9 @@
     <button id="button">Get Prices</button>
     <button id="time">Get Times</button>
     <button id="location">Click to show location</button>
+    <button id="est">Click to Return estimate</button>
     <script>
+        var uberPrice;
         var userLong ='';
         var userLat = '';
 
@@ -55,8 +57,8 @@
         xhttp.open('GET', 'https://api.uber.com/v1.2/estimates/price?start_latitude='+userLat+'&start_longitude='+userLong+'&end_latitude=33.952847&end_longitude=-84.549615',true);
         xhttp.setRequestHeader("Authorization", "Token gyxrCkq-oUEznly0dtJ9nx2kXyWpN3hJoUEnsykL");
         xhttp.send();
-            var body = xhttp.response;
-            console.log(body);
+            var uberPrice = xhttp.response;
+            
         });
 
 
@@ -80,6 +82,12 @@ xhttp.send();
 
 $("#location").on('click',function(){
     console.log(userLat + '' +userLong)
+});
+
+$("#est").on('click',function(){
+    console.log(uberPrice);
+    console.log(uberPrice[1]);
+    console.log(uberPrice[1].estimate);
 });
 
     
